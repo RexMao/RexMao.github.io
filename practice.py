@@ -162,15 +162,99 @@ with open("country.txt","a") as f:
 #去網路上隨便找一篇新聞，把該新聞存成news.txt，並且使用python讀檔並去除新聞內所有英文及數字後存檔
 #新增一個空白資料夾，在裡面新增365個空白文件，每個⽂件請命名為”月份-日.txt”並在文件內寫入該文件檔名是屬於一年中的第幾天
 
+#使用argv函式庫，讓使用者直接在執行檔案的時候輸入自己的名字並且印出來
+#[進階]同時檢查使用者是否有輸入名字，沒有的話印出Guest
+"""
+#請使用者輸入一個用逗號分隔的list,裡面包含n個正整數
+a = input("輸入已都號分隔的整數: ")
+list = a.split(",")
 
+print(list)
+print(len(list))
+print("Max:" + str(max(list)))
+print("Min:" + str(min(list)))
+"""
 
+"""
+#猜數字function版
+import random
+answer = random.randint(1,100)
+print(answer)
 
+def check(guess):
+	if(guess == answer):
+		return True
+	else:
+		return False
 
+while True:		
+	a = input("輸入0到100的數字 ")
+	guess = int(a)
+	if (check(guess)):
+		print("對了!")
+		break
+	else:
+		print("在猜一次")
+"""
+"""
+#請設計一個函數 sum() ，傳入一個正整數p，並回傳 1 到 p 之間所有正整數的和。
+def sum(p):
+	result = 0
+	for i in range(0,p+1):
+		result += i
+	return(result)
+a = input("輸入一個整數: ")
+p = int(a)
+print(sum(p))
+"""
+"""
+#請設計一個函式 factorial() ，傳入一個正整數p，並計算p的階層值
+def factorial(p):
+	result = 1
+	for i in range(1,p+1):
+		result *= i
+	return(result)
+a = input("輸入一個整數: ")
+p = int(a)
+print(factorial(p))
+"""
+"""
+#費氏數列
+def fibonacci(p):
+	a = int(p)
+	fn1 = 1
+	fn2 = 0
+	temp = 1
+	if a<=0:
+		return a
+	else:
+		for i in range(1,a):
+			temp = fn1
+			fn1 += fn2
+			fn2 = temp
+		return fn1
+a = input("輸入一個整數: ")
+print(fibonacci(a))	
+"""
+"""
+#猜數字並提示大or小
+import random
+answer = random.randint(1,100)
+print(answer)
 
+def check(guess):
+	if(guess == answer):
+		return "對了"
+	elif guess<answer:
+		return "答案比較大，再猜一次"
+	else:
+		return "答案比較小，再猜一次"
 
-
-
-
-	
-
+while True:
+	a = input("輸入0到100的數字 ")
+	guess = int(a)
+	print(check(guess))
+	if check(guess) == "對了":
+		break
+"""
 
