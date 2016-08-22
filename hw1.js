@@ -11,7 +11,7 @@ db.test.aggregate(
     {
       $group: {
       	_id:"$artTitle",
-      	total:{$sum:"$artLike.FBLike"}
+      	 total:{$sum:{ $add: [ "$artLike.FBLike", "$artLike.GoogleLike" ] }},
       }
     },
 
